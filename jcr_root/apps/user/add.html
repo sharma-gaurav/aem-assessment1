@@ -20,6 +20,7 @@
 		<form method="post" action="${resource.path}/"  enctype="multipart/form-data">
 		<input type="hidden" name=":order" value="first"/>
 		<input type="hidden" name=":redirect" value="${resource.path}.html"/>
+		<input type="hidden" name="sling:resourceType" value="user/blog"/>
 			<div class="form-group">
 				<label>Title</label> 
 				<input type="text" name="title"
