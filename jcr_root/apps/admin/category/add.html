@@ -1,0 +1,43 @@
+<!DOCTYPE html!>
+<!--/* A simple sightly script */-->
+<html>
+<head>
+<title>${properties.jcr:title}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+</head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body data-sly-use.model="com.tothenew.assessment.bundles.Model">
+	<div data-sly-include="../header.html" data-sly-unwrap=""></div>
+	<div class="container-fluid">
+		<form method="post" action="/content/topic/">
+			<input type="hidden" name="jcr:primaryType" value="nt:unstructured">
+			<input type="hidden" name="sling:resourceType" value="user">
+			<input type="hidden" name=":redirect" value="/content/category.add.html"/>
+			<div class="form-group">
+				<label>Name</label> 
+				<input type="text" name="jcr:title"
+					class="form-control" />
+				<input type="hidden" name="jcr:title@IgnoreBlanks"
+					value="true" />
+			</div>
+			<button class="form-control btn btn-info" type="submit">Submit</button>
+		</form>
+		<h1>Existing Categories</h1>
+		<ul>
+			<sly data-sly-list="${model.categories}">
+				<li>${item.valueMap.jcr:title}		
+			</sly>
+		</ul>
+	</div>
+	<div data-sly-include="../footer.html" data-sly-unwrap=""></div>
+</body>
+</html>

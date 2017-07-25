@@ -1,0 +1,44 @@
+<!DOCTYPE html!>
+<!--/* A simple sightly script */-->
+<html>
+<head>
+<title>${properties.jcr:title}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	crossorigin="anonymous"></script>
+</head>
+<body data-sly-use.model="com.tothenew.assessment.bundles.Model">
+	<div data-sly-include="header.html" data-sly-unwrap=""></div>
+	<div class="container-fluid">
+		<form method="post" action="${resource.path}/"  enctype="multipart/form-data">
+		<input type="hidden" name=":order" value="first"/>
+		<input type="hidden" name=":redirect" value="${resource.path}.html"/>
+			<div class="form-group">
+				<label>Title</label> 
+				<input type="text" name="title"
+					class="form-control" />
+				<input type="hidden" name="title@IgnoreBlanks"
+					class="form-control" />
+			</div>
+			<div class="form-group">
+				<label>Image</label> <input type="file" name="image"
+					class="form-control" />
+			</div>
+			<div class="form-group">
+				<label>Content</label>
+				<textarea name="content" class="form-control" rows="15"></textarea>
+			</div>
+			<button class="form-control btn btn-info" type="submit">Submit</button>
+		</form>
+
+	</div>
+	<div data-sly-include="footer.html" data-sly-unwrap=""></div>
+</body>
+</html>
