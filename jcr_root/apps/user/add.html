@@ -17,16 +17,15 @@
 <body data-sly-use.model="com.tothenew.assessment.bundles.Model">
 	<div data-sly-include="header.html" data-sly-unwrap=""></div>
 	<div class="container-fluid">
-		<form method="post" action="${resource.path}/"  enctype="multipart/form-data">
-		<input type="hidden" name=":order" value="first"/>
-		<input type="hidden" name=":redirect" value="${resource.path}.html"/>
-		<input type="hidden" name="sling:resourceType" value="user/blog"/>
+		<form method="post" action="${resource.path}/"
+			enctype="multipart/form-data">
+			<input type="hidden" name=":order" value="first" /> <input
+				type="hidden" name=":redirect" value="${resource.path}.html" /> <input
+				type="hidden" name="sling:resourceType" value="user/blog" />
 			<div class="form-group">
-				<label>Title</label> 
-				<input type="text" name="title"
-					class="form-control" />
-				<input type="hidden" name="title@IgnoreBlanks"
-					class="form-control" />
+				<label>Title</label> <input type="text" name="title"
+					class="form-control" /> <input type="hidden"
+					name="title@IgnoreBlanks" class="form-control" />
 			</div>
 			<div class="form-group">
 				<label>Image</label> <input type="file" name="image"

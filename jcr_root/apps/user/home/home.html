@@ -12,7 +12,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<div data-sly-include="header.html" data-sly-unwrap=""></div>
+	<div data-sly-include="../header.html" data-sly-unwrap=""></div>
 <div class="container-fluid">
 <sly data-sly-list.category="${resource.children}">
 <h3>${category.jcr:title}</h3>
@@ -43,6 +43,6 @@
 	
 </sly>
 
-	<div data-sly-include="footer.html" data-sly-unwrap=""></div>
+	<div data-sly-include="../footer.html" data-sly-unwrap=""></div>
 </body>
 </html>
